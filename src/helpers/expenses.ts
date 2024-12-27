@@ -1,4 +1,4 @@
-const API_URL = 'http://localhost:3001';
+const API_URL = 'https://backendmisgastos-2.onrender.com';
 
 export const getExpenses = async (categoryId?: number) => {
     const token = localStorage.getItem("token");

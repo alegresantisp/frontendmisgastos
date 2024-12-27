@@ -21,7 +21,7 @@ interface DateRange {
   endDate: Date | null;
 }
 
-const API_URL = 'http://localhost:3001';
+const API_URL = 'https://backendmisgastos-2.onrender.com';
 
 const StatisticsContext = createContext<StatisticsContextType | undefined>(undefined);
 

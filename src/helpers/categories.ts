@@ -1,6 +1,6 @@
 // helpers/categories.ts
 
-const API_URL = 'http://localhost:3001'; // URL base del backend
+const API_URL = 'https://backendmisgastos-2.onrender.com'; // URL base del backend
 
 // Función para obtener todas las categorías
 export const getCategories = async (isExpenseCategory?: boolean, name?: string) => {

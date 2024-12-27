@@ -1,4 +1,4 @@
-const API_URL = 'http://localhost:3001'; // Cambia esta URL según la dirección de tu backend
+const API_URL = 'https://backendmisgastos-2.onrender.com'; // Cambia esta URL según la dirección de tu backend
 
 interface LoginResponse {
   access_token: string;

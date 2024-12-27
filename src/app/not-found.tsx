@@ -39,10 +39,10 @@ export default function NotFound() {
         className="mb-8"
       >
         <h1 className="text-6xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-600 mb-4">
-          404: Page Not Found
+        404: Página No Encontrada
         </h1>
         <p className="text-blue-200 text-xl mb-8">
-          Oops! Looks like your money took a wrong turn!
+        ¡Vaya! ¡Parece que tu dinero tomó el camino equivocado!
         </p>
       </motion.div>
 
@@ -77,7 +77,7 @@ export default function NotFound() {
         animate={{ opacity: 1 }}
         transition={{ delay: 1, duration: 0.5 }}
       >
-        Don&apos;t worry, we&apos;re redirecting you in {countdown} seconds...
+        No te preocupes, te estamos redirigiendo en {countdown} segundos...
       </motion.p>
     </div>
   )

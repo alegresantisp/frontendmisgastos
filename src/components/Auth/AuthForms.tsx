@@ -3,9 +3,11 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
 import { useAuth } from "../Context/AuthContext"; // Usar el contexto para obtener funciones
+import { FaEye, FaEyeSlash } from 'react-icons/fa'; // Importa los íconos
 
 export default function AuthForms() {
   const [isRegister, setIsRegister] = useState(false);
+  const [showPassword, setShowPassword] = useState(false); // Estado para mostrar/ocultar la contraseña
 
   // Obtener las funciones y el estado del contexto
   const { login, register, isLoading, error } = useAuth();
@@ -58,11 +60,19 @@ export default function AuthForms() {
           <div className="relative">
             <input
               name="password"
-              type="password"
+              type={showPassword ? "text" : "password"} // Cambia el tipo del input
               placeholder="Contraseña"
               className="w-full bg-transparent border-b border-gray-600 focus:border-blue-500 outline-none transition-colors duration-300 pb-2 text-lg"
               required
             />
+            {/* Ojo para mostrar/ocultar la contraseña */}
+            <button
+              type="button"
+              onClick={() => setShowPassword(!showPassword)} // Cambiar el estado de mostrar la contraseña
+              className="absolute right-0 top-1/2 transform -translate-y-1/2 text-gray-400"
+            >
+              {showPassword ? <FaEyeSlash size={20} /> : <FaEye size={20} />}
+            </button>
           </div>
 
           {/* Error message */}

@@ -115,7 +115,7 @@ const AddExpenseForm: React.FC = () => {
             <div className="flex items-center space-x-2">
               <Select onValueChange={handleCategoryChange}>
                 <SelectTrigger>
-                  <SelectValue placeholder="Selecciona una Categoría" />
+                  <SelectValue placeholder="Selecciona" />
                 </SelectTrigger>
                 <SelectContent>
                   {expenseCategories.map(category => (

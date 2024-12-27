@@ -1,9 +1,7 @@
 'use client'
 
 import React from 'react'
-import { CalendarIcon } from 'lucide-react'
-import { cn } from '@/lib/utils'
-import { Button } from '@/components/ui/button'
+
 import {
   Select,
   SelectContent,
@@ -31,14 +29,7 @@ export function StatisticsFilters() {
         </SelectContent>
       </Select>
 
-      <Button
-        id="date"
-        variant={"outline"}
-        className={cn("w-[280px] justify-start text-left font-normal")}
-      >
-        <CalendarIcon className="mr-2 h-4 w-4" />
-        <span>Seleccionar periodo</span>
-      </Button>
+   
     </div>
   )
 }

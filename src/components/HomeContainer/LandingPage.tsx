@@ -1,9 +1,9 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
 import { PiPiggyBankBold, PiArrowFatLinesUpBold, PiArrowFatLinesDownBold } from 'react-icons/pi'
-import { useRouter } from 'next/navigation'  // Importa el hook useRouter
+import { useRouter } from 'next/navigation'
 
 const cards = [
   { title: "Organiza tus finanzas", content: "Lleva un control detallado de tus ingresos y gastos." },
@@ -13,7 +13,16 @@ const cards = [
 
 export default function LandingPage() {
   const [selectedCard, setSelectedCard] = useState<number | null>(null)
-  const router = useRouter()  // Inicializa el router
+  const router = useRouter()
+
+  useEffect(() => {
+    console.log('LandingPage montado')
+  }, [])
+
+  const handleLogin = () => {
+    console.log('Botón de login presionado')
+    router.push('/auth')
+  }
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-900 via-blue-900 to-gray-900 flex flex-col items-center text-center px-6 font-sans">
@@ -94,7 +103,7 @@ export default function LandingPage() {
         transition={{ delay: 1, duration: 0.8 }}
       >
         <button 
-          onClick={() => router.push('/auth')}  // Solo redirige cuando se hace clic en el botón
+          onClick={handleLogin}
           className="bg-blue-600 text-white font-bold py-3 px-8 rounded-full hover:bg-blue-700 transition-all duration-300 shadow-lg hover:shadow-blue-500/50 mb-4"
         >
           Comenzá tu viaje
@@ -103,3 +112,4 @@ export default function LandingPage() {
     </div>
   )
 }
+

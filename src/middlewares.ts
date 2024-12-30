@@ -3,6 +3,11 @@ import { NextResponse } from 'next/server';
 import type { NextRequest } from 'next/server';
 
 export function middleware(request: NextRequest) {
+  // Excluir explícitamente la página de inicio
+  if (request.nextUrl.pathname === '/') {
+    return NextResponse.next();
+  }
+
   // Obtener el token del header Authorization
   const authHeader = request.headers.get('Authorization');
   const headerToken = authHeader?.replace('Bearer ', '');
@@ -52,8 +57,9 @@ export const config = {
   matcher: [
     '/dashboard/:path*', 
     '/statistics/:path*',
-    '/auth', // Aseguramos que /auth sea manejado por este middleware
-    // Excluir rutas de archivos estáticos
+    '/auth',
+    // Excluir rutas de archivos estáticos y la página de inicio
     '/((?!api|_next/static|_next/image|favicon.ico).*)',
   ],
 };
+
